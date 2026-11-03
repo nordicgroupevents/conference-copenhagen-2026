@@ -431,47 +431,47 @@ function table(p){
 }
 
 // Sketch map of Vesterbro around Central Station (not to scale)
-const MAP = `<svg viewBox="850 175 900 790" role="img" aria-label="Map: Copenhagen Central Station (København H) at the top. Wakeup Copenhagen Bernstorffsgade is 2 minutes' walk south-east of the station. Scandic Kødbyen, the venue, is about 12 minutes' walk south-west, past the Kødbyen meatpacking district and beside the railway.">
-  <rect x="850" y="175" width="900" height="790" fill="var(--map-land)"/>
-  <path d="M1750 600 L1660 700 L1560 820 L1470 965 L1750 965 Z" fill="var(--map-water)"/>
-  <path d="M1470 175 L1600 175 L1590 240 L1500 245 Z" fill="var(--map-green)"/>
+const MAP = `<svg viewBox="850 175 960 790" role="img" aria-label="Map: Copenhagen Central Station (København H) at the top. Wakeup Copenhagen Bernstorffsgade is south-east of the station, near the harbour. Scandic Kødbyen, the venue, is about 12 minutes' walk south-west of the station, past the Kødbyen meatpacking district and beside the railway.">
+  <rect x="850" y="175" width="960" height="790" fill="var(--map-land)"/>
+  <path d="M1810 560 L1740 620 L1640 740 L1560 860 L1500 965 L1810 965 Z" fill="var(--map-water)"/>
+  <path d="M1440 175 L1580 175 L1575 255 L1460 260 Z" fill="var(--map-green)"/>
+  <path d="M1590 610 L1660 640 L1610 700 L1560 680 Z" fill="var(--map-green)"/>
   <path d="M1035 560 L1190 450 L1300 590 L1290 660 L1075 830 L1020 760 Z" fill="var(--map-block)"/>
-  <path d="M850 1005 L1000 965 L1130 900 L1250 760 L1330 640 L1390 520 L1420 400 L1430 175" stroke="var(--map-rail)" stroke-width="58" fill="none" stroke-linejoin="round"/>
-  <path d="M850 1005 L1000 965 L1130 900 L1250 760 L1330 640 L1390 520 L1420 400 L1430 175" stroke="var(--paper)" stroke-width="2" stroke-dasharray="10 8" fill="none" stroke-linejoin="round"/>
+  <path d="M850 1005 L1000 965 L1130 900 L1250 760 L1320 640 L1370 520 L1385 400 L1360 290 L1335 175" stroke="var(--map-rail)" stroke-width="58" fill="none" stroke-linejoin="round"/>
+  <path d="M850 1005 L1000 965 L1130 900 L1250 760 L1320 640 L1370 520 L1385 400 L1360 290 L1335 175" stroke="var(--paper)" stroke-width="2" stroke-dasharray="10 8" fill="none" stroke-linejoin="round"/>
   <g stroke="var(--map-road)" stroke-linecap="round" fill="none">
-    <path d="M850 330 L1000 300 L1230 255 L1350 230" stroke-width="12"/>
+    <path d="M850 330 L1000 300 L1230 255 L1320 235" stroke-width="12"/>
     <path d="M850 885 L1000 770 L1240 420" stroke-width="14"/>
     <path d="M900 690 L1060 570 L1230 430" stroke-width="8"/>
     <path d="M880 610 L1000 500 L1120 410" stroke-width="7"/>
     <path d="M1240 780 L1330 690 L1400 600" stroke-width="8"/>
     <path d="M1370 800 L1460 720 L1500 650" stroke-width="8"/>
-    <path d="M1280 520 L1450 410 L1680 280" stroke-width="10"/>
-    <path d="M1478 185 L1540 360 L1585 480" stroke-width="10"/>
+    <path d="M1280 540 L1430 420 L1690 265" stroke-width="10"/>
+    <path d="M1360 175 L1400 260 L1450 330 L1535 430 L1620 520 L1700 590" stroke-width="10"/>
     <path d="M985 730 L1030 860" stroke-width="7"/>
-    <path d="M1300 965 L1500 800 L1750 590" stroke-width="16"/>
+    <path d="M1250 1020 L1500 815 L1810 545" stroke-width="16"/>
   </g>
   <g font-family="var(--font-body)" font-size="15" fill="var(--muted)">
     <text x="960" y="290" transform="rotate(-11 960 290)">Vesterbrogade</text>
-    
     <text x="905" y="672" transform="rotate(-37 905 672)" font-size="14">Halmtorvet</text>
     <text x="1288" y="746" transform="rotate(-45 1288 746)" font-size="13">Ingerslevsgade</text>
-    <text x="1555" y="345" transform="rotate(-29 1555 345)" font-size="13">Tietgensgade</text>
-    <text x="1508" y="190" transform="rotate(70 1508 190)" font-size="13">Bernstorffsgade</text>
-    <text x="1560" y="820" transform="rotate(-40 1560 820)" font-size="13">Kalvebod Brygge</text>
+    <text x="1560" y="345" transform="rotate(-30 1560 345)" font-size="13">Tietgensgade</text>
+    <text x="1545" y="410" transform="rotate(48 1545 410)" font-size="13">Bernstorffsgade</text>
+    <text x="1560" y="830" transform="rotate(-41 1560 830)" font-size="13">Kalvebod Brygge</text>
     <text x="1120" y="700" font-style="italic" font-size="15" fill="var(--headline)">Kødbyen</text>
-    <text x="1525" y="215" font-style="italic" font-size="14" fill="var(--headline)">Tivoli</text>
-    <text x="1640" y="900" font-style="italic" font-size="14" fill="var(--headline)">Harbour</text>
+    <text x="1490" y="215" font-style="italic" font-size="14" fill="var(--headline)">Tivoli</text>
+    <text x="1680" y="900" font-style="italic" font-size="14" fill="var(--headline)">Harbour</text>
   </g>
   <g stroke="var(--headline)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 11">
-    <path d="M1415 300 L1330 380 L1230 435 L1060 572 L1020 650 L1000 712"/>
-    <path d="M1445 290 L1520 330 L1565 420"/>
+    <path d="M1320 346 L1290 380 L1230 440 L1060 572 L1020 650 L1000 712"/>
+    <path d="M1410 322 L1440 340 L1525 440 L1610 530 L1680 578"/>
   </g>
-  <rect x="1360" y="255" width="120" height="44" rx="8" fill="var(--headline)"/>
-  <text x="1420" y="283" text-anchor="middle" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--on-brand)">København H</text>
-  <text x="1420" y="320" text-anchor="middle" font-family="var(--font-body)" font-size="13" fill="var(--ink)">Central Station</text>
-  <circle cx="1570" cy="440" r="12" fill="var(--headline)" stroke="var(--paper)" stroke-width="3"/>
-  <text x="1590" y="438" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--ink)">Wakeup</text>
-  <text x="1590" y="457" font-family="var(--font-body)" font-size="13" fill="var(--muted)">${D.kind==='staff'?'Staff hotel':'Partner hotel'} · 2 min walk</text>
+  <rect x="1290" y="300" width="120" height="44" rx="8" fill="var(--headline)"/>
+  <text x="1350" y="328" text-anchor="middle" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--on-brand)">København H</text>
+  <text x="1280" y="328" text-anchor="end" font-family="var(--font-body)" font-size="13" fill="var(--ink)">Central Station</text>
+  <circle cx="1690" cy="582" r="12" fill="var(--headline)" stroke="var(--paper)" stroke-width="3"/>
+  <text x="1704" y="560" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--ink)">Wakeup</text>
+  <text x="1704" y="579" font-family="var(--font-body)" font-size="13" fill="var(--muted)">${D.kind==='staff'?'Staff hotel':'Partner hotel'}</text>
   <circle cx="1000" cy="725" r="16" fill="var(--cph-pink)" stroke="var(--paper)" stroke-width="3"/>
   <circle cx="1000" cy="725" r="6" fill="var(--paper)"/>
   <rect x="868" y="748" width="230" height="58" rx="8" fill="var(--paper)" stroke="var(--headline)" stroke-width="1.5"/>
@@ -480,8 +480,7 @@ const MAP = `<svg viewBox="850 175 900 790" role="img" aria-label="Map: Copenhag
   <circle cx="1120" cy="893" r="7" fill="var(--paper)" stroke="var(--headline)" stroke-width="3"/>
   <text x="1135" y="898" font-family="var(--font-body)" font-size="13" fill="var(--muted)">Dybbølsbro station</text>
   <text x="870" y="205" font-family="var(--font-body)" font-size="13" fill="var(--muted)">N ↑</text>
-</svg>
-`;
+</svg>`;
 
 // ---------- Router ----------
 const view = document.getElementById('view');
