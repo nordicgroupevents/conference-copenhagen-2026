@@ -9,6 +9,7 @@
   --paper:#ffffff; --ink:#0d0d0d; --muted:#545454; --headline:#00769f; --on-brand:#ffffff;
   --tint-10:#e6f1f5; --tint-25:#bfdde7; --tint-40:#99c8d9; --tint-60:#66adc5; --tint-85:#268bad;
   --grey-10:#e6e6e6; --offer:#f28e5b; --cph-teal:#00b2a3; --cph-pink:#f07d80;
+  --map-land:#eef4f6; --map-water:#bfdde7; --map-green:#d6eae6; --map-block:#dcebf0; --map-rail:#cfd8dc; --map-road:#ffffff;
   --font-display:Outfit,sans-serif;
   --font-body:"Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
@@ -347,7 +348,7 @@ V.travel = () => {
   <section>
     <h3>Around the venue</h3>
     <div class="map">${MAP}
-      <div class="mapfoot"><span class="muted">Sketch map, not to scale.</span>
+      <div class="mapfoot"><span class="muted">Simplified map based on Google Maps.</span>
         ${T0.mapLinks.map(m=>`<a class="btnlink" href="${gmaps(m.q)}" target="_blank" rel="noopener">${esc(m.label)} in Google Maps ↗</a>`).join('')}</div>
     </div>
   </section>
@@ -430,31 +431,57 @@ function table(p){
 }
 
 // Sketch map of Vesterbro around Central Station (not to scale)
-const MAP = `<svg viewBox="0 0 640 360" role="img" aria-label="Sketch map: Wakeup Copenhagen is beside Central Station on Bernstorffsgade; Scandic Kødbyen is about 10 minutes south-west on foot, in the Kødbyen meatpacking district.">
-  <rect width="640" height="360" fill="var(--tint-10)"/>
-  <path d="M0 250 C120 230 220 205 300 160 L640 40" stroke="var(--grey-10)" stroke-width="26" fill="none"/>
-  <path d="M0 250 C120 230 220 205 300 160 L640 40" stroke="var(--muted)" stroke-width="2" stroke-dasharray="10 6" fill="none" opacity=".6"/>
-  <text x="560" y="96" font-size="12" fill="var(--muted)" font-family="var(--font-body)" transform="rotate(-20 560 96)">rail lines</text>
-  <rect x="260" y="70" width="190" height="70" rx="6" fill="var(--paper)" stroke="var(--headline)" stroke-width="1.5"/>
-  <text x="355" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)" font-family="var(--font-display)">København H</text>
-  <text x="355" y="120" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="var(--font-body)">Central Station · trains from the airport</text>
-  <line x1="230" y1="20" x2="230" y2="200" stroke="var(--tint-25)" stroke-width="10"/>
-  <text x="222" y="42" font-size="12" fill="var(--muted)" font-family="var(--font-body)" text-anchor="end">Bernstorffsgade</text>
-  <circle cx="230" cy="100" r="9" fill="var(--headline)"/>
-  <text x="218" y="84" text-anchor="end" font-size="14" font-weight="700" fill="var(--ink)" font-family="var(--font-display)">Wakeup</text>
-  <text x="218" y="100" text-anchor="end" font-size="12" fill="var(--muted)" font-family="var(--font-body)">${D.kind==='staff'?'Staff hotel':'Partner hotel'} · 2 min</text>
-  <path d="M230 110 L230 200 C230 240 200 268 150 285" stroke="var(--headline)" stroke-width="3" fill="none" stroke-dasharray="2 6" stroke-linecap="round"/>
-  <text x="246" y="236" font-size="12" font-weight="700" fill="var(--headline)" font-family="var(--font-body)">10 min walk</text>
-  <rect x="40" y="272" width="200" height="66" rx="6" fill="var(--paper)" stroke="var(--headline)" stroke-width="1.5"/>
-  <circle cx="150" cy="285" r="11" fill="var(--cph-pink)"/>
-  <text x="58" y="312" font-size="15" font-weight="700" fill="var(--ink)" font-family="var(--font-display)">Scandic Kødbyen</text>
-  <text x="58" y="328" font-size="12" fill="var(--muted)" font-family="var(--font-body)">The venue · Skelbækgade 3A</text>
-  <text x="300" y="300" font-size="12" fill="var(--muted)" font-family="var(--font-body)" font-style="italic">Kødbyen</text>
-  <text x="300" y="316" font-size="12" fill="var(--muted)" font-family="var(--font-body)" font-style="italic">meatpacking district</text>
-  <text x="520" y="250" font-size="12" fill="var(--muted)" font-family="var(--font-body)" text-anchor="middle">Airport ↘</text>
-  <text x="520" y="266" font-size="12" fill="var(--muted)" font-family="var(--font-body)" text-anchor="middle">13 min by train</text>
-  <text x="40" y="34" font-size="12" fill="var(--muted)" font-family="var(--font-body)">N ↑</text>
-</svg>`;
+const MAP = `<svg viewBox="850 175 900 790" role="img" aria-label="Map: Copenhagen Central Station (København H) at the top. Wakeup Copenhagen Bernstorffsgade is 2 minutes' walk south-east of the station. Scandic Kødbyen, the venue, is about 12 minutes' walk south-west, past the Kødbyen meatpacking district and beside the railway.">
+  <rect x="850" y="175" width="900" height="790" fill="var(--map-land)"/>
+  <path d="M1750 600 L1660 700 L1560 820 L1470 965 L1750 965 Z" fill="var(--map-water)"/>
+  <path d="M1470 175 L1600 175 L1590 240 L1500 245 Z" fill="var(--map-green)"/>
+  <path d="M1035 560 L1190 450 L1300 590 L1290 660 L1075 830 L1020 760 Z" fill="var(--map-block)"/>
+  <path d="M850 1005 L1000 965 L1130 900 L1250 760 L1330 640 L1390 520 L1420 400 L1430 175" stroke="var(--map-rail)" stroke-width="58" fill="none" stroke-linejoin="round"/>
+  <path d="M850 1005 L1000 965 L1130 900 L1250 760 L1330 640 L1390 520 L1420 400 L1430 175" stroke="var(--paper)" stroke-width="2" stroke-dasharray="10 8" fill="none" stroke-linejoin="round"/>
+  <g stroke="var(--map-road)" stroke-linecap="round" fill="none">
+    <path d="M850 330 L1000 300 L1230 255 L1350 230" stroke-width="12"/>
+    <path d="M850 885 L1000 770 L1240 420" stroke-width="14"/>
+    <path d="M900 690 L1060 570 L1230 430" stroke-width="8"/>
+    <path d="M880 610 L1000 500 L1120 410" stroke-width="7"/>
+    <path d="M1240 780 L1330 690 L1400 600" stroke-width="8"/>
+    <path d="M1370 800 L1460 720 L1500 650" stroke-width="8"/>
+    <path d="M1280 520 L1450 410 L1680 280" stroke-width="10"/>
+    <path d="M1478 185 L1540 360 L1585 480" stroke-width="10"/>
+    <path d="M985 730 L1030 860" stroke-width="7"/>
+    <path d="M1300 965 L1500 800 L1750 590" stroke-width="16"/>
+  </g>
+  <g font-family="var(--font-body)" font-size="15" fill="var(--muted)">
+    <text x="960" y="290" transform="rotate(-11 960 290)">Vesterbrogade</text>
+    
+    <text x="905" y="672" transform="rotate(-37 905 672)" font-size="14">Halmtorvet</text>
+    <text x="1288" y="746" transform="rotate(-45 1288 746)" font-size="13">Ingerslevsgade</text>
+    <text x="1555" y="345" transform="rotate(-29 1555 345)" font-size="13">Tietgensgade</text>
+    <text x="1508" y="190" transform="rotate(70 1508 190)" font-size="13">Bernstorffsgade</text>
+    <text x="1560" y="820" transform="rotate(-40 1560 820)" font-size="13">Kalvebod Brygge</text>
+    <text x="1120" y="700" font-style="italic" font-size="15" fill="var(--headline)">Kødbyen</text>
+    <text x="1525" y="215" font-style="italic" font-size="14" fill="var(--headline)">Tivoli</text>
+    <text x="1640" y="900" font-style="italic" font-size="14" fill="var(--headline)">Harbour</text>
+  </g>
+  <g stroke="var(--headline)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 11">
+    <path d="M1415 300 L1330 380 L1230 435 L1060 572 L1020 650 L1000 712"/>
+    <path d="M1445 290 L1520 330 L1565 420"/>
+  </g>
+  <rect x="1360" y="255" width="120" height="44" rx="8" fill="var(--headline)"/>
+  <text x="1420" y="283" text-anchor="middle" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--on-brand)">København H</text>
+  <text x="1420" y="320" text-anchor="middle" font-family="var(--font-body)" font-size="13" fill="var(--ink)">Central Station</text>
+  <circle cx="1570" cy="440" r="12" fill="var(--headline)" stroke="var(--paper)" stroke-width="3"/>
+  <text x="1590" y="438" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--ink)">Wakeup</text>
+  <text x="1590" y="457" font-family="var(--font-body)" font-size="13" fill="var(--muted)">${D.kind==='staff'?'Staff hotel':'Partner hotel'} · 2 min walk</text>
+  <circle cx="1000" cy="725" r="16" fill="var(--cph-pink)" stroke="var(--paper)" stroke-width="3"/>
+  <circle cx="1000" cy="725" r="6" fill="var(--paper)"/>
+  <rect x="868" y="748" width="230" height="58" rx="8" fill="var(--paper)" stroke="var(--headline)" stroke-width="1.5"/>
+  <text x="882" y="773" font-family="var(--font-display)" font-weight="500" font-size="18" fill="var(--ink)">Scandic Kødbyen</text>
+  <text x="882" y="794" font-family="var(--font-body)" font-size="13" fill="var(--muted)">The venue · 12 min walk</text>
+  <circle cx="1120" cy="893" r="7" fill="var(--paper)" stroke="var(--headline)" stroke-width="3"/>
+  <text x="1135" y="898" font-family="var(--font-body)" font-size="13" fill="var(--muted)">Dybbølsbro station</text>
+  <text x="870" y="205" font-family="var(--font-body)" font-size="13" fill="var(--muted)">N ↑</text>
+</svg>
+`;
 
 // ---------- Router ----------
 const view = document.getElementById('view');
